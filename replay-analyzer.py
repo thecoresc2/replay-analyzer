@@ -1,7 +1,4 @@
-__copyright__ = "(c) 2019 TheCoreSC2 Team <https://github.com/thecoresc2/>"
-__author__ = "TheCoreSC2 Team"
-__license__ = "MIT, see https://opensource.org/licenses/MIT"
-
+#!/usr/bin/env python
 """
 Usage
 =====
@@ -34,6 +31,7 @@ rem Run the program in the environment
 > py -3 -m pipenv run replay-analyzer.py -h
 ```
 """
+
 import argparse
 import collections
 import csv
@@ -48,6 +46,10 @@ import s2protocol
 import s2protocol.versions
 import sys
 import zipfile
+
+__copyright__ = "(c) 2019 TheCoreSC2 Team <https://github.com/thecoresc2/>"
+__author__ = "TheCoreSC2 Team"
+__license__ = "MIT, see https://opensource.org/licenses/MIT"
 
 EVENT_UNIT_INIT_ID = 6
 EVENT_UNIT_BORN_ID = 1

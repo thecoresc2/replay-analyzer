@@ -84,7 +84,7 @@ def process_replay(replay, processor):
 
 def process_replay_in_pack(pack_and_replay):
   processor, pack, which_replay = pack_and_replay
-  
+
   try:
     with zipfile.ZipFile(pack) as replay_pack:
       return process_replay(replay_pack.open(which_replay), processor())
@@ -219,7 +219,7 @@ class CameraProcessor(object):
 
     # Merge data sets by cameras
     return {'saves': list(map(operator.add, *saved_cameras.values())), 'jumps': list(map(operator.add, *jumps.values()))}
-  
+
   def write_csv(self, writer):
     writer.writerow(['Which', 'Saves', 'Jumps'])
     # Write to file.
@@ -239,7 +239,7 @@ if __name__ == "__main__":
   subparsers = parser.add_subparsers()
   parser_builds = subparsers.add_parser('builds', help='Extract build data', parents=[common_parser])
   parser_builds.set_defaults(processor_class=BuildProcessor)
-  
+
   parser_cameras = subparsers.add_parser('cameras', help='Extract camera data', parents=[common_parser])
   parser_cameras.set_defaults(processor_class=CameraProcessor)
 
